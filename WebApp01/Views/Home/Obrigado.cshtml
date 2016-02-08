@@ -1,0 +1,42 @@
+﻿@model WebApp01.Models.RegistroModel
+
+@{
+    ViewBag.Title = "Obrigado";
+}
+
+<h2>Obrigado</h2>
+
+<h3>Agradecemos seu registro em nosso site.</h3>
+<br />
+
+<fieldset>
+    <legend>Dados Registrados</legend>
+
+    <div class="text-left">
+        <b> @Html.DisplayNameFor(m => m.Nome) </b>
+    </div>
+    <div class="text-left">
+        @Html.DisplayFor(m => m.Nome)
+    </div>
+    <div class="text-left">
+        @Html.DisplayNameFor(m => m.Cidade)
+    </div>
+    <div class="text-left">
+        @Html.DisplayFor(m => m.Cidade)
+    </div>
+    <div class="text-left">
+        @Html.DisplayNameFor(m => m.Estado)
+    </div>
+    <div class="text-left">
+        @Html.DisplayFor(m => m.Estado)
+    </div>
+    <div class="text-left">
+        @Html.DisplayNameFor(m => m.Email)
+    </div>
+    <div class="text-left">
+        @Html.DisplayFor(m => m.Email)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Voltar","Index")
+</p>

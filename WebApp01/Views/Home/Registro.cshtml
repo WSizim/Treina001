@@ -1,0 +1,80 @@
+﻿@model WebApp01.Models.RegistroModel
+@{
+    ViewBag.Title = "Solicitação de Registro";
+
+    List<String> estado = new List<string>();
+    estado.Add("SP");
+    estado.Add("RJ");
+    estado.Add("MG");
+    estado.Add("GO");
+}
+
+<h2>Registro</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Formulário de Registro</legend>
+
+        <div classs="editor-label">
+            @Html.LabelFor(m => m.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.Nome)
+            @Html.ValidationMessageFor(m => m.Nome)
+        </div>
+
+        <div classs="editor-label">
+            @Html.LabelFor(m => m.Cidade)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(m => m.Cidade)
+            @Html.ValidationMessageFor(m => m.Cidade)
+        </div>
+
+        <div classs="editor-label">
+            @Html.LabelFor(m => m.Estado)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(m => m.Estado, new MultiSelectList(estado))
+            @Html.ValidationMessageFor(m => m.Estado)
+        </div>
+
+        <div classs="editor-label">
+            @Html.LabelFor(m => m.Fone)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(m => m.Fone)
+            @Html.ValidationMessageFor(m => m.Fone)
+        </div>
+
+        <div classs="editor-label">
+            @Html.LabelFor(m => m.Celular)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(m => m.Celular)
+            @Html.ValidationMessageFor(m => m.Celular)
+        </div>
+
+        <div classs="editor-label">
+            @Html.LabelFor(m => m.Email)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+
+        <div classs="editor-label">
+            @Html.LabelFor(m => m.Descricao)
+        </div>
+        <div class="text-left">
+            @Html.TextAreaFor(m => m.Descricao)
+            @Html.ValidationMessageFor(m => m.Descricao)
+        </div>
+
+        <br/>
+        <p>
+            <input type="submit" value="Enviar"/>
+        </p>
+    </fieldset>
+}
